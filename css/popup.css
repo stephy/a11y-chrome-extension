@@ -4,11 +4,11 @@ body {
 	font-size: 11px!important;
 }
 
-#settings-dialog{
+#settings-dialog {
 	width: 800px;
 }
 
-label{
+label {
 	display: inline-block;
 	width: 155px;
 	margin-right: 10px;

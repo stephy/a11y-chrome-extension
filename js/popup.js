@@ -3,7 +3,7 @@ var bgPage = chrome.extension.getBackgroundPage();
 function click(e) {
   if (e.target.id !== 'yahoo' && e.target.id !== 'keyboardfocus') {
       if (this.checked) {
-          //add accessibility DOM nodes
+          // add accessibility DOM nodes
           if (e.target.id === "role") {
             var code = 'getRoles("'+e.target.attributes['data-attribute'].nodeValue+'");';
           } else if (e.target.id ==="arialabel") {
@@ -13,7 +13,7 @@ function click(e) {
           }
 
       } else {
-           //clear accessibility DOM nodes
+           // clear accessibility DOM nodes
            if (e.target.id === "role") {
             var code = 'clearRoles("'+ e.target.attributes['data-attribute'].nodeValue+'");';
           } else if (e.target.id ==="arialabel"){
@@ -23,7 +23,7 @@ function click(e) {
           }
       }
 
-      //execute code
+      // execute code
       chrome.tabs.executeScript(null, { file: "js/jquery-1.11.0.min.js" }, function() {
         chrome.tabs.executeScript(null, { file: "js/jquery-ui.js" }, function() {
           chrome.tabs.executeScript(null, {file: 'js/script.js'}, function() {
@@ -32,9 +32,9 @@ function click(e) {
         });
       });
 
-  }else if(e.target.id === 'yahoo'){
-    //yahoo mail search
-    if(this.checked){
+  } else if (e.target.id === 'yahoo') {
+    // yahoo mail search
+    if (this.checked) {
       //execute code
       chrome.tabs.executeScript(null, { file: "js/jquery-1.11.0.min.js" }, function() {
         chrome.tabs.executeScript(null, {file: 'js/yui.js'}, function() {
@@ -43,8 +43,8 @@ function click(e) {
       });
     }
   } else if (e.target.id === 'keyboardfocus') {
-    console.log('keyboard focus? ??');
-    //yahoo mail search
+
+    // yahoo mail search
     if (this.checked) {
       //execute code
       chrome.tabs.executeScript(null, { file: "js/jquery-1.11.0.min.js" }, function() {
@@ -54,23 +54,22 @@ function click(e) {
       });
     }
   }
-
-
 }
+
 document.addEventListener('DOMContentLoaded', function () {
   $('.settings').on('change', click);
-  $( "#tabs" ).tabs(); //enable jquery tabs
-  $(document).tooltip(); //enable tooltips
+  $( "#tabs" ).tabs(); // enable jquery tabs
+  $(document).tooltip(); // enable tooltips
 
-  //select all tabs
-  $('#select-all-roles').click(function(event) {  //on click
-        if(this.checked) { // check select status
-            $('.settings').each(function() { //loop through each checkbox
-                this.checked = true;  //select all checkboxes with class "checkbox1"
+  // select all tabs
+  $('#select-all-roles').click(function(event) {  // on click
+        if (this.checked) { // check select status
+            $('.settings').each(function() { // loop through each checkbox
+                this.checked = true;  // select all checkboxes with class "checkbox1"
             });
-        }else{
-            $('.settings').each(function() { //loop through each checkbox
-                this.checked = false; //deselect all checkboxes with class "checkbox1"
+        } else {
+            $('.settings').each(function() { // loop through each checkbox
+                this.checked = false; // deselect all checkboxes with class "checkbox1"
             });
         }
     });
@@ -103,7 +102,6 @@ document.addEventListener('DOMContentLoaded', function () {
       bgPage.tabindexSettings.set(index, checked);
     };
 
-    console.log('i am the delegate');
     Y.one('#tabs-1').delegate('click', setRoleCheckbox, '.settings');
     Y.one('#tabs-2').delegate('click', setAriaCheckbox, '.settings');
     Y.one('#tabs-3').delegate('click', setTabindexCheckbox, '.settings');
@@ -114,7 +112,6 @@ document.addEventListener('DOMContentLoaded', function () {
       attrs.roleAttrs = Y.JSON.parse(Y.Cookie.get('accessibilityExtensionRoleSettings')),
       attrs.ariaAttrs = Y.JSON.parse(Y.Cookie.get('accessibilityExtensionAriaSettings')),
       attrs.tabindexAttrs = Y.JSON.parse(Y.Cookie.get('accessibilityExtensionTabindexSettings'));
-
 
       for (key in attrs) {
         currAttrs = attrs[key];

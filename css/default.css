@@ -1,4 +1,4 @@
-.ymuis-popup-wrapper{
+.ymuis-popup-wrapper {
 	font-family: sans-serif;
 	font-size: 12px;
 	height: auto;
@@ -16,7 +16,7 @@
 	box-shadow: 1px 0px 26px 2px rgba(102,102,102,0.77);
 }
 
-.ymuis-persistent-popup-wrapper{
+.ymuis-persistent-popup-wrapper {
 	font-family: sans-serif;
 	font-size: 12px;
 	height: 300px;
@@ -35,20 +35,20 @@
 	box-shadow: 1px 0px 26px 2px rgba(102,102,102,0.77);
 }
 
-.ymuis h3{
+.ymuis h3 {
 	font-weight: 700;
 	color: #500095;
 	margin-bottom: 8px;
 }
-.ymuis-emphasis{
+.ymuis-emphasis {
 	color: #000;
 	font-weight: 100;
 }
 
-.ymuis-btn-close{
+.ymuis-btn-close {
 	float: right;
 	display: block;
-	background-image: url('http://localhost/mail-ui-search/images/close.png');
+	background-image: url('/images/close.png');
 	background-size: cover;
 	width: 20px;
 	height: 20px;
@@ -56,30 +56,30 @@
 	display: none;
 }
 
-.ymuis-line-number{
+.ymuis-line-number {
 	color: #fff;
 }
 
-table#ymuis-results-table th{
+table#ymuis-results-table th {
 	color: #500095;
 	padding: 10px;
 	border-bottom: 1px solid #ccc;
 }
 
-table#ymuis-results-table td{
+table#ymuis-results-table td {
 	padding: 10px;
 	border-bottom: 1px solid #ccc;
 	color: #777;
 }
 
-p.ymuis-p{
+p.ymuis-p {
 	margin-bottom: 10px;
 }
-.ymuis-path{
+
+.ymuis-path {
 	font-size: 11px;
 	color: #666;
 }
-
 
 /*
 	Captions
@@ -103,6 +103,6 @@ p.ymuis-p{
 /*
 	selected tab
 */
-.ymuis-current-selected-element{
-	border: 6px dashed #FF00EE!important;	
+.ymuis-current-selected-element {
+	border: 6px dashed #FF00EE!important;
 }
