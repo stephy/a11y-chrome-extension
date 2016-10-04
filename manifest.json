@@ -17,9 +17,7 @@
   ],
 
   "content_scripts": [ {
-    //"js": ["js/yui.js", "js/jquery-1.11.0.min.js", "js/default.js"],
     "css": ["css/jquery-ui-1.10.4.custom.min.css","css/default.css"],
-    //"matches": ["https://us-mg5.mail.yahoo.com/*", "https://us-mg904.mail.yahoo.com/*", "https://pureendure.corp.gq1.yahoo.com/*", "http://localhost/*"]
     "matches": [ "http://*/*", "https://*/*"]
   }],
 
