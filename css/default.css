@@ -1,0 +1,108 @@
+.ymuis-popup-wrapper{
+	font-family: sans-serif;
+	font-size: 12px;
+	height: auto;
+	max-height: 300px;
+	width: 400px;
+	background-color: rgba(255,255,255,0.9);
+	position: absolute;
+	z-index: 10000;
+	border-radius: 10px;
+	padding: 14px;
+	text-align: left;
+	overflow: hidden;
+	-webkit-box-shadow: 1px 0px 26px 2px rgba(102,102,102,0.77);
+	-moz-box-shadow: 1px 0px 26px 2px rgba(102,102,102,0.77);
+	box-shadow: 1px 0px 26px 2px rgba(102,102,102,0.77);
+}
+
+.ymuis-persistent-popup-wrapper{
+	font-family: sans-serif;
+	font-size: 12px;
+	height: 300px;
+	width: 400px;
+	background-color: rgba(255,255,255,0.9);
+	position: absolute;
+	z-index: 10000;
+	border-radius: 10px;
+	padding: 14px;
+	text-align: left;
+	overflow: auto;
+	top: 0px;
+	right: 0px;
+	-webkit-box-shadow: 1px 0px 26px 2px rgba(102,102,102,0.77);
+	-moz-box-shadow: 1px 0px 26px 2px rgba(102,102,102,0.77);
+	box-shadow: 1px 0px 26px 2px rgba(102,102,102,0.77);
+}
+
+.ymuis h3{
+	font-weight: 700;
+	color: #500095;
+	margin-bottom: 8px;
+}
+.ymuis-emphasis{
+	color: #000;
+	font-weight: 100;
+}
+
+.ymuis-btn-close{
+	float: right;
+	display: block;
+	background-image: url('http://localhost/mail-ui-search/images/close.png');
+	background-size: cover;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	display: none;
+}
+
+.ymuis-line-number{
+	color: #fff;
+}
+
+table#ymuis-results-table th{
+	color: #500095;
+	padding: 10px;
+	border-bottom: 1px solid #ccc;
+}
+
+table#ymuis-results-table td{
+	padding: 10px;
+	border-bottom: 1px solid #ccc;
+	color: #777;
+}
+
+p.ymuis-p{
+	margin-bottom: 10px;
+}
+.ymuis-path{
+	font-size: 11px;
+	color: #666;
+}
+
+
+/*
+	Captions
+*/
+.ymuis-caption {
+	background-color: rgba(102,0,204, 0.9);
+	color: #fff!important;
+	display: inline-block;
+	max-width: 100px;
+	font-size: 9px;
+	border-radius: 8px;
+	padding: 5px;
+}
+
+.ymuis-label {
+	padding: 5px;
+	border: 3px solid #6600CC;
+	margin-bottom: 10px;
+}
+
+/*
+	selected tab
+*/
+.ymuis-current-selected-element{
+	border: 6px dashed #FF00EE!important;	
+}

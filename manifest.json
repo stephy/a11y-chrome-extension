@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+
+  "name": "Accessibility Inspector",
+  "description": "Display UI accessible elements",
+  "version": "1.0",
+
+
+  "background": {
+    "scripts": ["js/yui.js", "js/background.js"]
+  },
+
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+
+  "permissions": [
+    "tabs", "http://*/*", "https://*/*"
+  ],
+
+  "content_scripts": [ {
+    //"js": ["js/yui.js", "js/jquery-1.11.0.min.js", "js/default.js"],
+    "css": ["css/jquery-ui-1.10.4.custom.min.css","css/default.css"],
+    //"matches": ["https://us-mg5.mail.yahoo.com/*", "https://us-mg904.mail.yahoo.com/*", "https://pureendure.corp.gq1.yahoo.com/*", "http://localhost/*"]
+    "matches": [ "http://*/*", "https://*/*"]
+  }],
+
+  "browser_action": {
+    "default_icon": "images/icon.png",
+    "default_title": "Accessibility",
+    "default_popup": "popup.html"
+  }
+}

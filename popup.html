@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Accessibility Inspector Chrome Extension</title>
+  <link rel="stylesheet" href="css/jquery-ui-1.10.4.custom.css">
+  <script src="js/jquery-1.10.2.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/yui.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/popup.css">
+  <script type="text/javascript" src="js/popup.js"></script>
+</head>
+<body>
+
+ <div id="settings-dialog">
+
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Roles</a></li>
+    <li><a href="#tabs-2">Aria Labels</a></li>
+    <li><a href="#tabs-3">Tabindex</a></li>
+    <li><a href="#tabs-4">Watch Keyboard Focus</a></li>
+    <li><a href="#tabs-5">Live Inspector</a></li>
+  </ul>
+  <div id="tabs-1">
+        <a href="#" title="alert: A message with important, and usually time-sensitive, information. See related alertdialog and status.">
+        <input type="checkbox" id="role" data-attribute="alert" class="settings" value="false"><label>alert</label></a>
+        
+        <a href="#" title="alertdialog: A type of dialog that contains an alert message, where initial focus goes to an element within the dialog. See related alert and dialog.">
+        <input type="checkbox" id="role" data-attribute="alertdialog" class="settings" value="false"><label>alertdialog</label></a>
+        
+        <a href="#" title="application: A region declared as a web application, as opposed to a web document.">
+        <input type="checkbox" id="role" data-attribute="application" class="settings" value="false"><label>application</label></a>
+        
+        <a href="#" title="article: A section of a page that consists of a composition that forms an independent part of a document, page, or site.">
+        <input type="checkbox" id="role" data-attribute="article" class="settings" value="false"><label>article</label></a>
+        
+        <a href="#" title="banner: A region that contains mostly site-oriented content, rather than page-specific content.">
+        <input type="checkbox" id="role" data-attribute="banner" class="settings" value="false"><label>banner</label></a>
+        
+        <a href="#" title="button: An input that allows for user-triggered actions when clicked or pressed. See related link">
+        <input type="checkbox" id="role" data-attribute="button" class="settings" value="false"><label>button</label></a>
+        
+        <a href="#" title="checkbox: A checkable input that has three possible values: true, false, or mixed.">
+        <input type="checkbox" id="role" data-attribute="checkbox" class="settings" value="false"><label>checkbox</label></a>
+        
+        <a href="#" title="columnheader: A cell containing header information for a column.">
+        <input type="checkbox" id="role" data-attribute="columnheader" class="settings" value="false"><label>columnheader</label></a>
+        
+        <a href="#" title="combobox: A presentation of a select; usually similar to a textbox where users can type ahead to select an option, or type to enter arbitrary text as a new item in the list. See related listbox.">
+        <input type="checkbox" id="role" data-attribute="combobox" class="settings" value="false"><label>combobox</label></a>
+        
+        <a href="#" title="command: A form of widget that performs an action but does not receive input data.">
+        <input type="checkbox" id="role" data-attribute="command" class="settings" value="false"><label>command</label></a>
+        
+        <a href="#" title="complementary: A supporting section of the document, designed to be complementary to the main content at a similar level in the DOM hierarchy, but remains meaningful when separated from the main content.">
+        <input type="checkbox" id="role" data-attribute="complementary" class="settings" value="false"><label>complementary</label></a>
+        
+        <a href="#" title="composite: A widget that may contain navigable descendants or owned children.">
+        <input type="checkbox" id="role" data-attribute="composite" class="settings" value="false"><label>composite</label></a>
+        
+        <a href="#" title="contentinfo: A large perceivable region that contains information about the parent document.">
+        <input type="checkbox" id="role" data-attribute="contentinfo" class="settings" value="false"><label>contentinfo</label></a>
+        
+        <a href="#" title="definition: A definition of a term or concept.">
+        <input type="checkbox" id="role" data-attribute="definition" class="settings" value="false"><label>definition</label></a>
+        
+        <a href="#" title="dialog: A dialog is an application window that is designed to interrupt the current processing of an application in order to prompt the user to enter information or require a response. See related alertdialog.">
+        <input type="checkbox" id="role" data-attribute="dialog" class="settings" value="false"><label>dialog</label></a>
+        
+        <a href="#" title="directory: A list of references to members of a group, such as a static table of contents.">
+        <input type="checkbox" id="role" data-attribute="directory" class="settings" value="false"><label>directory</label></a>
+        
+        <a href="#" title="document: A region containing related information that is declared as document content, as opposed to a web application.">
+        <input type="checkbox" id="role" data-attribute="document" class="settings" value="false"><label>document</label></a>
+        
+        <a href="#" title="form: A landmark region that contains a collection of items and objects that, as a whole, combine to create a form. See related search.">
+        <input type="checkbox" id="role" data-attribute="form" class="settings" value="false"><label>form</label></a>
+        
+        <a href="#" title="grid: A grid is an interactive control which contains cells of tabular data arranged in rows and columns, like a table.">
+        <input type="checkbox" id="role" data-attribute="grid" class="settings" value="false"><label>grid</label></a>
+        
+        <a href="#" title="gridcell: A cell in a grid or treegrid.">
+        <input type="checkbox" id="role" data-attribute="gridcell" class="settings" value="false"><label>gridcell</label></a>
+        
+        <a href="#" title="group: A set of user interface objects which are not intended to be included in a page summary or table of contents by assistive technologies.">
+        <input type="checkbox" id="role" data-attribute="group" class="settings" value="false"><label>group</label></a>
+        
+        <a href="#" title="heading: A heading for a section of the page.">
+        <input type="checkbox" id="role" data-attribute="heading" class="settings" value="false"><label>heading</label></a>
+        
+        <a href="#" title="img: A container for a collection of elements that form an image.">
+        <input type="checkbox" id="role" data-attribute="img" class="settings" value="false"><label>img</label></a>
+        
+        <a href="#" title="input:A generic type of widget that allows user input.">
+        <input type="checkbox" id="role" data-attribute="input" class="settings" value="false"><label>input</label></a>
+        
+        <a href="#" title="landmark: A region of the page intended as a navigational landmark.">
+        <input type="checkbox" id="role" data-attribute="landmark" class="settings" value="false"><label>landmark</label></a>
+        
+        <a href="#" title="link: An interactive reference to an internal or external resource that, when activated, causes the user agent to navigate to that resource. See related button.">
+        <input type="checkbox" id="role" data-attribute="link" class="settings" value="false"><label>link</label></a>
+        
+        <a href="#" title="list: A group of non-interactive list items. See related listbox.">
+        <input type="checkbox" id="role" data-attribute="list" class="settings" value="false"><label>list</label></a>
+        
+        <a href="#" title="listbox: A widget that allows the user to select one or more items from a list of choices. See related combobox and list.">
+        <input type="checkbox" id="role" data-attribute="listbox" class="settings" value="false"><label>listbox</label></a>
+        
+        <a href="#" title="listitem: A single item in a list or directory.">
+        <input type="checkbox" id="role" data-attribute="listitem" class="settings" value="false"><label>listitem</label></a>
+        
+        <a href="#" title="log: A type of live region where new information is added in meaningful order and old information may disappear. See related marquee.">
+        <input type="checkbox" id="role" data-attribute="log" class="settings" value="false"><label>log</label></a>
+        
+        <a href="#" title="main: The main content of a document.">
+        <input type="checkbox" id="role" data-attribute="main" class="settings" value="false"><label>main</label></a>
+        
+        <a href="#" title="marquee: A type of live region where non-essential information changes frequently. See related log.">
+        <input type="checkbox" id="role" data-attribute="marquee" class="settings" value="false"><label>marquee</label></a>
+        
+        <a href="#" title="math: Content that represents a mathematical expression.">
+        <input type="checkbox" id="role" data-attribute="math" class="settings" value="false"><label>math</label></a>
+        
+        <a href="#" title="menu: A type of widget that offers a list of choices to the user.">
+        <input type="checkbox" id="role" data-attribute="menu" class="settings" value="false"><label>menu</label></a>
+        
+        <a href="#" title="menubar: A presentation of menu that usually remains visible and is usually presented horizontally.">
+        <input type="checkbox" id="role" data-attribute="menubar" class="settings" value="false"><label>menubar</label></a>
+        
+        <a href="#" title="menuitem: An option in a set of choices contained by a menu or menubar.">
+        <input type="checkbox" id="role" data-attribute="menuitem" class="settings" value="false"><label>menuitem</label></a>
+        
+        <a href="#" title="menuitemcheckbox: A menuitem with a checkable state whose possible values are true, false, or mixed.">
+        <input type="checkbox" id="role" data-attribute="menuitemcheckbox" class="settings" value="false"><label>menuitemcheckbox</label></a>
+        
+        <a href="#" title="menuitemradio: A checkable menuitem in a set of elements with role menuitemradio, only one of which can be checked at a time.">
+        <input type="checkbox" id="role" data-attribute="menuitemradio" class="settings" value="false"><label>menuitemradio</label></a>
+        
+        <a href="#" title="navigation: A collection of navigational elements (usually links) for navigating the document or related documents.">
+        <input type="checkbox" id="role" data-attribute="navigation" class="settings" value="false"><label>navigation</label></a>
+        
+        <a href="#" title="note: A section whose content is parenthetic or ancillary to the main content of the resource.">
+        <input type="checkbox" id="role" data-attribute="note" class="settings" value="false"><label>note</label></a>
+        
+        <a href="#" title="option: A selectable item in a select list.">
+        <input type="checkbox" id="role" data-attribute="option" class="settings" value="false"><label>option</label></a>
+        
+        <a href="#" title="presentation:An element whose implicit native role semantics will not be mapped to the accessibility API.">
+        <input type="checkbox" id="role" data-attribute="presentation" class="settings" value="false"><label>presentation</label></a>
+        
+        <a href="#" title="progressbar: An element that displays the progress status for tasks that take a long time.">
+        <input type="checkbox" id="role" data-attribute="progressbar" class="settings" value="false"><label>progressbar</label></a>
+        
+        <a href="#" title="radio: A checkable input in a group of radio roles, only one of which can be checked at a time.">
+        <input type="checkbox" id="role" data-attribute="radio" class="settings" value="false"><label>radio</label></a>
+        
+        <a href="#" title="radiogroup: A group of radio buttons.">
+        <input type="checkbox" id="role" data-attribute="radiogroup" class="settings" value="false"><label>radiogroup</label></a>
+        
+        <a href="#" title="range: An input representing a range of values that can be set by the user.">
+        <input type="checkbox" id="role" data-attribute="range" class="settings" value="false"><label>range</label></a>
+        
+        <a href="#" title="region: A large perceivable section of a web page or document, that is important enough to be included in a page summary or table of contents, for example, an area of the page containing live sporting event statistics.">
+        <input type="checkbox" id="role" data-attribute="region" class="settings" value="false"><label>region</label></a>
+        
+        <a href="#" title="roletype: The base role from which all other roles in this taxonomy inherit.">
+        <input type="checkbox" id="role" data-attribute="roletype" class="settings" value="false"><label>roletype</label></a>
+        
+        <a href="#" title="row: A row of cells in a grid.">
+        <input type="checkbox" id="role" data-attribute="row" class="settings" value="false"><label>row</label></a>
+        
+        <a href="#" title="rowgroup: A group containing one or more row elements in a grid.">
+        <input type="checkbox" id="role" data-attribute="rowgroup" class="settings" value="false"><label>rowgroup</label></a>
+        
+        <a href="#" title="rowheader: A cell containing header information for a row in a grid.">
+        <input type="checkbox" id="role" data-attribute="rowheader" class="settings" value="false"><label>rowheader</label></a>
+        
+        <a href="#" title="scrollbar: A graphical object that controls the scrolling of content within a viewing area, regardless of whether the content is fully displayed within the viewing area.">
+        <input type="checkbox" id="role" data-attribute="scrollbar" class="settings" value="false"><label>scrollbar</label></a>
+        
+        <a href="#" title="search: A landmark region that contains a collection of items and objects that, as a whole, combine to create a search facility. See related form.">
+        <input type="checkbox" id="role" data-attribute="search" class="settings" value="false"><label>search</label></a>
+        
+        <a href="#" title="section: A renderable structural containment unit in a document or application.">
+        <input type="checkbox" id="role" data-attribute="section" class="settings" value="false"><label>section</label></a>
+        
+        <a href="#" title="sectionhead: A structure that labels or summarizes the topic of its related section.">
+        <input type="checkbox" id="role" data-attribute="sectionhead" class="settings" value="false"><label>sectionhead</label></a>
+        
+        <a href="#" title="select: A form widget that allows the user to make selections from a set of choices.">
+        <input type="checkbox" id="role" data-attribute="select" class="settings" value="false"><label>select</label></a>
+        
+        <a href="#" title="separator: A divider that separates and distinguishes sections of content or groups of menuitems.">
+        <input type="checkbox" id="role" data-attribute="separator" class="settings" value="false"><label>separator</label></a>
+        
+        <a href="#" title="slider: A user input where the user selects a value from within a given range.">
+        <input type="checkbox" id="role" data-attribute="slider" class="settings" value="false"><label>slider</label></a>
+        
+        <a href="#" title="spinbutton: A form of range that expects the user to select from among discrete choices.">
+        <input type="checkbox" id="role" data-attribute="spinbutton" class="settings" value="false"><label>spinbutton</label></a>
+        
+        <a href="#" title="status: A container whose content is advisory information for the user but is not important enough to justify an alert, often but not necessarily presented as a status bar. See related alert.">
+        <input type="checkbox" id="role" data-attribute="status" class="settings" value="false"><label>status</label></a>
+        
+        <a href="#" title="structure: A document structural element.">
+        <input type="checkbox" id="role" data-attribute="structure" class="settings" value="false"><label>structure</label></a>
+        
+        <a href="#" title="tab: A grouping label providing a mechanism for selecting the tab content that is to be rendered to the use.">
+        <input type="checkbox" id="role" data-attribute="tab" class="settings" value="false"><label>tab</label></a>
+        
+        <a href="#" title="tablist: A list of tab elements, which are references to tabpanel elements.">
+        <input type="checkbox" id="role" data-attribute="tablist" class="settings" value="false"><label>tablist</label></a>
+        
+        <a href="#" title="tabpanel: A container for the resources associated with a tab, where each tab is contained in a tablist.">
+        <input type="checkbox" id="role" data-attribute="tabpanel" class="settings" value="false"><label>tabpanel</label></a>
+        
+        <a href="#" title="textbox: Input that allows free-form text as its value.">
+        <input type="checkbox" id="role" data-attribute="textbox" class="settings" value="false"><label>textbox</label></a>
+        
+        <a href="#" title="timer: A type of live region containing a numerical counter which indicates an amount of elapsed time from a start point, or the time remaining until an end point.">
+        <input type="checkbox" id="role" data-attribute="timer" class="settings" value="false"><label>timer</label></a>
+        
+        <a href="#" title="toolbar: A collection of commonly used function buttons or controls represented in compact visual form.">
+        <input type="checkbox" id="role" data-attribute="toolbar" class="settings" value="false"><label>toolbar</label></a>
+        
+        <a href="#" title="tooltip: A contextual popup that displays a description for an element.">
+        <input type="checkbox" id="role" data-attribute="tooltip" class="settings" value="false"><label>tooltip</label></a>
+        
+        <a href="#" title="tree: A type of list that may contain sub-level nested groups that can be collapsed and expanded.">
+        <input type="checkbox" id="role" data-attribute="tree" class="settings" value="false"><label>tree</label></a>
+        
+        <a href="#" title="treegrid: A grid whose rows can be expanded and collapsed in the same manner as for a tree.">
+        <input type="checkbox" id="role" data-attribute="treegrid" class="settings" value="false"><label>treegrid</label></a>
+        
+        <a href="#" title="treeitem: An option item of a tree. This is an element within a tree that may be expanded or collapsed if it contains a sub-level group of treeitem elements.">
+        <input type="checkbox" id="role" data-attribute="treeitem" class="settings" value="false"><label>treeitem</label></a>
+        
+        <a href="#" title="widget: An interactive component of a graphical user interface (GUI).">
+        <input type="checkbox" id="role" data-attribute="widget" class="settings" value="false"><label>widget</label></a>
+        
+        <a href="#" title="window: A browser or application window.">
+        <input type="checkbox" id="role" data-attribute="window" class="settings" value="false"><label>window</label></a>
+
+        <input type="checkbox" id="select-all-roles"><label>select all</label>
+  </div>
+
+
+  <div id="tabs-2">    
+      <a href="#" title="aria-activedescendant: Identifies the currently active descendant of a composite widget.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-activedescendant" value="false"><label>aria-activedescendant</label></a>
+      
+      <a href="#" title="aria-atomic: Indicates whether assistive technologies will present all, or only parts of, the changed region based on the change notifications defined by the aria-relevant attribute. See related aria-relevant.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-atomic" value="false"><label>aria-atomic</label></a>
+      
+      <a href="#" title="aria-autocomplete: Indicates whether user input completion suggestions are provided.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-autocomplete" value="false"><label>aria-autocomplete</label></a>
+      
+      <a href="#" title="aria-busy: Indicates whether an element, and its subtree, are currently being updated.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-busy" value="false"><label>aria-busy</label></a>
+      
+      <a href="#" title="aria-checked: Indicates the current "checked" state of checkboxes, radio buttons, and other widgets. See related aria-pressed and aria-selected.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-checked" value="false"><label>aria-checked</label></a>
+      
+      <a href="#" title="aria-controlsowns: Identifies the element (or elements) whose contents or presence are controlled by the current element. See related aria-owns.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-controlsowns" value="false"><label>aria-controlsowns</label></a>
+      
+      <a href="#" title="aria-describedby: Identifies the element (or elements) that describes the object. See related aria-labelledby.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-describedby" value="false"><label>aria-describedby</label></a>
+      
+      <a href="#" title="aria-disabled: Indicates that the element is perceivable but disabled, so it is not editable or otherwise operable. See related aria-hidden and aria-readonly.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-disabled" value="false"><label>aria-disabled</label></a>
+      
+      <a href="#" title="aria-dropeffect: Indicates what functions can be performed when the dragged object is released on the drop target. This allows assistive technologies to convey the possible drag options available to users, including whether a pop-up menu of choices is provided by the application. Typically, drop effect functions can only be provided once an object has been grabbed for a drag operation as the drop effect functions available are dependent on the object being dragged.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-dropeffect" value="false"><label>aria-dropeffect</label></a>
+      
+      <a href="#" title="aria-expanded: Indicates whether the element, or another grouping element it controls, is currently expanded or collapsed.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-expanded" value="false"><label>aria-expanded</label></a>
+      
+      <a href="#" title="aria-flowto: Identifies the next element (or elements) in an alternate reading order of content which, at the user's discretion, allows assistive technology to override the general default of reading in document source order.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-flowto" value="false"><label>aria-flowto</label></a>
+      
+      <a href="#" title="aria-grabbed: Indicates an element's "grabbed" state in a drag-and-drop operation.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-grabbed" value="false"><label>aria-grabbe</label></a>
+      
+      <a href="#" title="aria-haspopup: Indicates that the element has a popup context menu or sub-level menu.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-haspopup" value="false"><label>aria-haspopup</label></a>
+      
+      <a href="#" title="aria-hidden: Indicates that the element and all of its descendants are not visible or perceivable to any user as implemented by the author. See related aria-disabled.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-hidden" value="false"><label>aria-hidden</label></a>
+      
+      <a href="#" title="aria-invalid: Indicates the entered value does not conform to the format expected by the application.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-invalid" value="false"><label>aria-invalid </label></a>
+      
+      <a href="#" title="aria-label: Defines a string value that labels the current element. See related aria-labelledby.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-label" value="false"><label>aria-label</label></a>
+      
+      <a href="#" title="aria-labelledby: Identifies the element (or elements) that labels the current element. See related aria-label and aria-describedby.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-labelledby" value="false"><label>aria-labelledby</label></a>
+      
+      <a href="#" title="aria-level: Defines the hierarchical level of an element within a structure.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-level" value="false"><label>aria-level</label></a>
+      
+      <a href="#" title="aria-live: Indicates that an element will be updated, and describes the types of updates the user agents, assistive technologies, and user can expect from the live region.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-live" value="false"><label>aria-live</label></a>
+      
+      <a href="#" title="aria-multiline: Indicates whether a text box accepts multiple lines of input or only a single line.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-multiline" value="false"><label>aria-multiline</label></a>
+      
+      <a href="#" title="aria-multiselectable: Indicates that the user may select more than one item from the current selectable descendants.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-multiselectable" value="false"><label>aria-multiselectable</label></a>
+      
+      <a href="#" title="aria-orientation: Indicates whether the element and orientation is horizontal or vertical.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-orientation" value="false"><label>aria-orientation</label></a>
+      
+      <a href="#" title="aria-owns: Identifies an element (or elements) in order to define a visual, functional, or contextual parent/child relationship between DOM elements where the DOM hierarchy cannot be used to represent the relationship. See related aria-controls.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-owns" value="false"><label>aria-owns</label></a>
+      
+      <a href="#" title="aria-posinset: Defines an element's number or position in the current set of listitems or treeitems. Not required if all elements in the set are present in the DOM. See related aria-setsize.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-posinset" value="false"><label>aria-posinset</label></a>
+      
+      <a href="#" title="aria-pressed: Indicates the current 'pressed' state of toggle buttons. See related aria-checked and aria-selected.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-pressed" value="false"><label>aria-pressed</label></a>
+      
+      <a href="#" title="aria-readonly: Indicates that the element is not editable, but is otherwise operable. See related aria-disabled.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-readonly" value="false"><label>aria-readonly</label></a>
+      
+      <a href="#" title="aria-relevant: Indicates what user agent change notifications (additions, removals, etc.) assistive technologies will receive within a live region. See related aria-atomic">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-relevant" value="false"><label>aria-relevant</label></a>
+      
+      <a href="#" title="aria-required: Indicates that user input is required on the element before a form may be submitted.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-required" value="false"><label>aria-required</label></a>
+      
+      <a href="#" title="aria-selected: Indicates the current "selected" state of various widgets. See related aria-checked and aria-pressed.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-selected" value="false"><label>aria-selected</label></a>
+      
+      <a href="#" title="aria-setsize: Defines the number of items in the current set of listitems or treeitems. Not required if all elements in the set are present in the DOM. See related aria-posinset.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-setsize" value="false"><label>aria-setsize</label></a>
+      
+      <a href="#" title="aria-sort: Indicates if items in a table or grid are sorted in ascending or descending order.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-sort" value="false"><label>aria-sort</label></a>
+      
+      <a href="#" title="aria-valuemax: Defines the maximum allowed value for a range widget.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-valuemax" value="false"><label>aria-valuemax</label></a>
+      
+      <a href="#" title="aria-valuemin: Defines the minimum allowed value for a range widget.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-valuemin" value="false"><label>aria-valuemin</label></a>
+      
+      <a href="#" title="aria-valuenow: Defines the current value for a range widget. See related aria-valuetext.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-valuenow" value="false"><label>aria-valuenow</label></a>
+      
+      <a href="#" title="aria-valuetext: Defines the human readable text alternative of aria-valuenow for a range widget.">
+      <input type="checkbox" id="arialabel" class="settings" data-attribute="aria-valuetext" value="false"><label>aria-valuetext</label></a>
+
+  </div>
+
+  <div id="tabs-3">
+    <input type="checkbox" id="tabindex" data-attribute="0" class="settings" value="false"><label>Tabindex=0</label>
+    <input type="checkbox" id="tabindex" data-attribute="-1" class="settings" value="false"><label>Tabindex=-1</label>
+  </div>
+
+
+  <div id="tabs-4">
+    <input type="checkbox" id="keyboardfocus" class="settings" value="false"><label>Watch Keyboard Focus</label>
+  </div>
+
+   <div id="tabs-5">
+    <input type="checkbox" id="yahoo" class="settings" value="false"><label>Easy Yahoo Mail UI Live Search Popup</label>
+  </div>
+</div><!--end of tabs -->
+ 
+ </div><!--end of settings dialog -->
+</body>
+</html>
+
+

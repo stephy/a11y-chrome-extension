@@ -1,0 +1,15 @@
+body {
+	font-family: sans-serif;
+	margin: 0!important;
+	font-size: 11px!important;
+}
+
+#settings-dialog{
+	width: 800px;
+}
+
+label{
+	display: inline-block;
+	width: 155px;
+	margin-right: 10px;
+}
