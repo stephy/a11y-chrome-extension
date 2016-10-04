@@ -1,28 +1,28 @@
 var bgPage = chrome.extension.getBackgroundPage();
 
 function click(e) {
-  if(e.target.id !== 'yahoo' && e.target.id !== 'keyboardfocus'){
-      if(this.checked) {
+  if (e.target.id !== 'yahoo' && e.target.id !== 'keyboardfocus') {
+      if (this.checked) {
           //add accessibility DOM nodes
-          if(e.target.id === "role"){
-            var code = 'getRoles("'+ e.target.attributes['data-attribute'].nodeValue+'");';
-          }else if(e.target.id ==="arialabel"){
-            var code = 'getAriaLabels("'+e.target.attributes['data-attribute'].nodeValue+'");'; 
-          }else if(e.target.id =="tabindex"){
-            var code = 'getTabindex("'+e.target.attributes['data-attribute'].nodeValue+'");'; 
+          if (e.target.id === "role") {
+            var code = 'getRoles("'+e.target.attributes['data-attribute'].nodeValue+'");';
+          } else if (e.target.id ==="arialabel") {
+            var code = 'getAriaLabels("'+e.target.attributes['data-attribute'].nodeValue+'");';
+          } else if (e.target.id =="tabindex") {
+            var code = 'getTabindex("'+e.target.attributes['data-attribute'].nodeValue+'");';
           }
 
-      }else{
+      } else {
            //clear accessibility DOM nodes
-           if(e.target.id === "role"){
+           if (e.target.id === "role") {
             var code = 'clearRoles("'+ e.target.attributes['data-attribute'].nodeValue+'");';
-          }else if(e.target.id ==="arialabel"){
-            var code = 'clearAriaLabels("'+e.target.attributes['data-attribute'].nodeValue+'");'; 
-          }else if(e.target.id ==="tabindex"){
-            var code = 'clearTabindex("'+e.target.attributes['data-attribute'].nodeValue+'");'; 
+          } else if (e.target.id ==="arialabel"){
+            var code = 'clearAriaLabels("'+e.target.attributes['data-attribute'].nodeValue+'");';
+          } else if (e.target.id ==="tabindex"){
+            var code = 'clearTabindex("'+e.target.attributes['data-attribute'].nodeValue+'");';
           }
       }
-      
+
       //execute code
       chrome.tabs.executeScript(null, { file: "js/jquery-1.11.0.min.js" }, function() {
         chrome.tabs.executeScript(null, { file: "js/jquery-ui.js" }, function() {
@@ -33,7 +33,7 @@ function click(e) {
       });
 
   }else if(e.target.id === 'yahoo'){
-    //yahoo mail search 
+    //yahoo mail search
     if(this.checked){
       //execute code
       chrome.tabs.executeScript(null, { file: "js/jquery-1.11.0.min.js" }, function() {
@@ -42,10 +42,10 @@ function click(e) {
         });
       });
     }
-  }else if(e.target.id === 'keyboardfocus'){
+  } else if (e.target.id === 'keyboardfocus') {
     console.log('keyboard focus? ??');
-    //yahoo mail search 
-    if(this.checked){
+    //yahoo mail search
+    if (this.checked) {
       //execute code
       chrome.tabs.executeScript(null, { file: "js/jquery-1.11.0.min.js" }, function() {
         chrome.tabs.executeScript(null, {file: 'js/yui.js'}, function() {
@@ -63,15 +63,15 @@ document.addEventListener('DOMContentLoaded', function () {
   $(document).tooltip(); //enable tooltips
 
   //select all tabs
-  $('#select-all-roles').click(function(event) {  //on click 
+  $('#select-all-roles').click(function(event) {  //on click
         if(this.checked) { // check select status
             $('.settings').each(function() { //loop through each checkbox
-                this.checked = true;  //select all checkboxes with class "checkbox1"               
+                this.checked = true;  //select all checkboxes with class "checkbox1"
             });
         }else{
             $('.settings').each(function() { //loop through each checkbox
-                this.checked = false; //deselect all checkboxes with class "checkbox1"                       
-            });         
+                this.checked = false; //deselect all checkboxes with class "checkbox1"
+            });
         }
     });
 
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
         for (key in currAttrs) {
           var currRoleAttr = currAttrs[key].value,
               newKey = key.substr(6);
-  
+
           if (currRoleAttr) {
              $('[data-attribute="'+newKey+'"]').attr("checked","checked");
              $('[data-attribute="'+newKey+'"]').change();
@@ -135,6 +135,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 });
-
-
-
