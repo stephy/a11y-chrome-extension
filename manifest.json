@@ -5,7 +5,6 @@
   "description": "Display UI accessible elements",
   "version": "1.0",
 
-
   "background": {
     "scripts": ["js/yui.js", "js/background.js"]
   },
